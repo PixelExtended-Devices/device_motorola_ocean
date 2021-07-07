@@ -21,8 +21,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit some common PE stuff
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+# PEX:
+PEX_BUILD_TYPE := OFFICIAL
+PEX_MAINTAINER := VitorSSSouza
+TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 720
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Inherit from ocean device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -38,4 +46,4 @@ PRODUCT_NAME := aosp_ocean
 PRODUCT_MODEL := moto g(7) power
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=ocean 
+        PRODUCT_NAME=ocean
